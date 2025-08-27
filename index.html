@@ -1,6 +1,9 @@
 <!doctype html>
 <title>Berry's Website</title>
 <link rel="stylesheet" type="text/css" href="./assets/css/mainstyle.css">
+
+
+
 <header>
     <h1>&VeryThinSpace;Berry Diaboli</h1>
     <img src="./assets/images/BDIcon.png">
@@ -14,8 +17,10 @@
 <body>
     <main>
         <div>
-            <h1>Welcome</h1>
-            <button onclick="DivBox1()" class="dropbtn">+</button>
+            <div class="topbox">
+                <h1>Welcome</h1>
+                <button onclick="DivBox(0)" class="dropbtn">+</button>
+            </div>
             <div id="dropdiv1" class="dropdiv">
                 <p>This is my website, and I bet you are here cause you are curious on who I am!</p>
                 <p>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br></p>
@@ -23,8 +28,13 @@
         </div>
 
         <div>
-            <h1>Hobbies</h1>
-            <p>WIP</p>
+            <div class="topbox">
+                <h1>Hobbies</h1>
+                <button onclick="DivBox(1)" class="dropbtn">+</button>
+            </div>
+            <div id="dropdiv2" class="dropdiv">
+                <p>This is my website, and I bet you are here cause you are curious on who I am!</p>
+            </div>
         </div>
 
         <div>
@@ -37,10 +47,44 @@
             <p>WIP</p>
         </div>
     </main>
+
+    <script>
+        const idDivBoxArray = [
+            document.getElementById('dropdiv1'),
+            document.getElementById('dropdiv2'),
+        ]
+
+        var stateDivArray = [
+            true,
+            true
+        ]
+        
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function DivBox(BoxNumber) {
+            idDivBoxArray[BoxNumber].style.animation = stateDivArray[BoxNumber]
+                ? 'boxclose 0.5s ease-in-out forwards'
+                : 'boxexpand 0.5s ease-in-out forwards';
+            if (stateDivArray[BoxNumber] == true) {
+                setTimeout(function() {
+                        idDivBoxArray[BoxNumber].hidden = true;
+                }, 480);
+            }
+            else {
+                idDivBoxArray[BoxNumber].hidden = false;
+            }
+            // Update state
+            stateDivArray[BoxNumber] = !stateDivArray[BoxNumber];
+        }
+    </script>
+    
 </body>
 
 <footer>
     <p>Copyright @Berrydiaboli 2025</p>
 </footer>
 
-<script src="./assets/JS/animation.js"></script>
+
+
+
+<script src="./assets/JS/indexMiscCode.js"></script>
