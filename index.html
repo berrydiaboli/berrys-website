@@ -15,6 +15,7 @@
     </div>
 </header>
 <body>
+    <img class="backgroundimg" src="./assets/images/background/webbackground.png">
     <main>
         <div>
             <div class="topbox">
@@ -78,13 +79,21 @@
         }
     </script>
     
+    <svg>
+        <defs>
+            <filter id="shake0">
+                <feTurbulence id="turbulence" baseFrequency = '0.01' numOctaves="3" seed="0"/>
+                <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="7"/>
+            </filter>
+        </defs>
+    </svg>
+
+
 </body>
 
 <footer>
     <p>Copyright @Berrydiaboli 2025</p>
 </footer>
-
-
 
 
 <script src="./assets/JS/indexMiscCode.js"></script>

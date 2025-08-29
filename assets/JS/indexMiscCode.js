@@ -25,3 +25,14 @@ wrapCharacters();
 
 /// Drop Down Button ///
 
+const turbulence = document.querySelector('#turbulence');
+
+// Function to generate a random seed value
+function getRandomSeed() {
+  return Math.floor(Math.random() * 9999999); // Generate number between 0 and 9999999
+}
+
+// Update seed every 200ms
+setInterval(() => {
+  turbulence.setAttribute('seed', getRandomSeed());
+}, 142);

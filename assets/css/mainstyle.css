@@ -3,30 +3,35 @@
   src: url(../fonts/BoldPixels1.4.ttf);
 }
 
-
-
 * {
     text-align: center;
     font-family: BoldPixels;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 48px;
     letter-spacing: 2px;
     font-weight: 550;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(181, 181, 181);
+    color: white;
+    mix-blend-mode:difference;
 }
 
 p {
-    font-size: 24px;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 3px 0px rgba(255, 255, 255, 0.4);
 }
 
 /* Header */
 header > h1{ 
     font-size: 64px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgb(255, 255, 255);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(181, 181, 181);
     text-decoration: underline;
     text-decoration-color: white ;
+    padding-bottom: 20px;
 }
 
 header > img {
@@ -38,7 +43,7 @@ header > img {
     left:0;
     right:0;
     z-index: -1;
-    filter:blur(5px);
+    filter:blur(3px);
 
 }
 
@@ -59,7 +64,7 @@ header > .dropdown > .dropdown-box {
 /* Body Stuff */
 
 body {
-    background-color: rgb(33, 0, 53);
+    background-color: #49008d;
 }
 
 /* Main Stuff */
@@ -67,23 +72,24 @@ body {
 main {
   
     position: relative;
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
 }
 
 main > div {
     padding: 0;
     overflow: hidden; 
-    margin: 20px;
+    margin: 40px;
     border-radius: 15px;
-    background-color: rgba(209, 46, 31, 0.75);
-    box-shadow: 0px 5prgba(255, 21, 0, 0.75);
+    background-color: rgba(160, 0, 0, 0.6);
+      box-shadow: 0 0 5px 5px #ff0f5b,
+              0 0 10px 7px #96839e,
+              0 0 15px 20px #440b7978
 }
 
 main > div > * {
     padding: 10px;
     margin: 0;
-    text-shadow: 0px 0px 5px #ff69ad;
 }
 
 .topbox {
@@ -110,6 +116,16 @@ footer {
 }
 
 /* Other */
+
+.backgroundimg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(101%);
+    width: 100%;
+    z-index: -5;
+    filter: url("#shake0");
+}
 
 /* Drop Down Stuff */
 
@@ -155,7 +171,7 @@ footer {
     overflow: auto;
     padding-bottom: -10px;
     border-radius: 0px 0px 15px 15px;
-    background-color: #4c081260;
+    background-color: #00000082;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     overflow: hidden;
