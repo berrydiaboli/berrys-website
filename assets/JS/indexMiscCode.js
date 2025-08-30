@@ -23,7 +23,7 @@ console.log('Page loaded, starting character wrapper...');
 wrapCharacters();
 
 
-/// Drop Down Button ///
+/// Background Animation ///
 
 const turbulence = document.querySelector('#turbulence');
 
@@ -35,4 +35,21 @@ function getRandomSeed() {
 // Update seed every 200ms
 setInterval(() => {
   turbulence.setAttribute('seed', getRandomSeed());
-}, 142);
+}, 284);
+
+/// Hover Div ///
+
+const mediaPlayer = document.getElementById('mediaPlayer');
+const mediaController = document.getElementById('mediaController')
+let isHovering = false;
+
+mediaPlayer.addEventListener('mouseenter', () => {
+  mediaController.style.animation = 'playerSlide 0.5s forwards'
+  isHovering = true;
+});
+
+mediaPlayer.addEventListener('mouseleave', () => {
+  mediaController.style.animation = 'playerSlideBack 0.5s forwards'
+  isHovering = false;
+});
+

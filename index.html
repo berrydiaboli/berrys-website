@@ -39,13 +39,23 @@
         </div>
 
         <div>
-            <h1>Projects</h1>
-            <p>WIP</p>
+            <div class="topbox">
+                <h1>Projects</h1>
+                <button onclick="DivBox(2)" class="dropbtn">+</button>
+            </div>
+            <div id="dropdiv3" class="dropdiv">
+                <p>This is my website, and I bet you are here cause you are curious on who I am!</p>
+            </div>
         </div>
 
         <div>
-            <h1>Gallery</h1>
-            <p>WIP</p>
+            <div class="topbox">
+                <h1>Gallery</h1>
+                <button onclick="DivBox(3)" class="dropbtn">+</button>
+            </div>
+            <div id="dropdiv4" class="dropdiv">
+                <p>This is my website, and I bet you are here cause you are curious on who I am!</p>
+            </div>
         </div>
     </main>
 
@@ -53,9 +63,13 @@
         const idDivBoxArray = [
             document.getElementById('dropdiv1'),
             document.getElementById('dropdiv2'),
+            document.getElementById('dropdiv3'),
+            document.getElementById('dropdiv4'),
         ]
 
         var stateDivArray = [
+            true,
+            true,
             true,
             true
         ]
@@ -88,6 +102,31 @@
         </defs>
     </svg>
 
+    <link rel="stylesheet" type="text/css" href="./assets/css/audioplayerstyle.css">
+    <div id= "mediaPlayer" class="audioInfo"> 
+        
+        <div style="margin-top: 15px; font-size: 24px; opacity: 50%">
+            <span>Mindwave -</span>
+            <span>Floor One</span>
+        </div>
+
+        <div id='mediaController' class="audioplayer">
+                <!-- Use audio element instead of source -->
+            <audio autoplay id="audio" src="./assets/music/floorone.mp3" type="audio/mp3"></audio>
+
+            <button id="audioButton">▶</button>
+            <div class="progressbar">
+                <span id="currentaudiotime">0:00</span>
+                <progress id="audioseekbar" value="0" max="1"></progress>
+                <span id="maxaudiotime">0:00</span>
+            </div>
+            <div class="volumeControls">
+                <button id="volumemuteButton">🕪</button>
+                <input type="range" min="1" max="100" value="50" class="slider" id="volume">
+            </div>
+            <script src="./assets/JS/musicplayer.js"></script>
+        </div>
+    </div>
 
 </body>
 
